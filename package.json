@@ -1,0 +1,57 @@
+{
+  "name": "express-basic-token",
+  "description": "Express/conect middleware for basic token authentication.",
+  "version": "1.0.0",
+  "main": "dist/express-basic-token.js",
+  "author": "anvk",
+  "contributors": [
+    {
+      "name": "Alexey Novak",
+      "email": "alexey.novak.mail@gmail.com"
+    }
+  ],
+  "scripts": {
+    "lint": "eslint src/ test/",
+    "build:source": "rimraf dist/ && babel src/ --out-dir dist/",
+    "build:tests": "rimraf test-dist/ && babel test/ --out-dir test-dist/",
+    "clean": "rimraf dist/ && rimraf test-dist/",
+    "build": "npm run build:source && npm run build:tests",
+    "test": "node node_modules/mocha/bin/mocha --reporter spec test-dist/*",
+    "example": "node example.js"
+  },
+  "directories": {
+    "test": "test",
+    "dist": "dist",
+    "src": "src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:anvk/express-basic-token.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anvk/express-basic-token/issues"
+  },
+  "keywords": [
+    "auth",
+    "authentication",
+    "authorization",
+    "http",
+    "token",
+    "express"
+  ],
+  "dependencies": {
+    "express-unless": "^0.3.0"
+  },
+  "devDependencies": {
+    "babel": "5.6.5",
+    "babel-eslint": "5.0.0",
+    "chai": "3.0.0",
+    "eslint": "2.2.0",
+    "eslint-config-airbnb": "6.0.2",
+    "mocha": "2.2.5",
+    "rimraf": "2.5.2"
+  },
+  "engine": "node >= 0.10.x",
+  "private": false,
+  "license": "MIT"
+}
