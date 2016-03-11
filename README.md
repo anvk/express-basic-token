@@ -4,9 +4,7 @@
 
 ## Usage
 
-This is a very basic authentication middleware which simply looks for a present token
-in query, body or headers. This could be used for private APIs which are used withint your company
-but you still want to add some level of security so that not everyone can simply call those APIs.
+This is a very basic authentication middleware which simply looks for a present token in query, body or headers. This could be used for basic APIs which do not require a complex authentication or authorization process. But at the same time it adds some level of security to prevent from completely open public access to your API (e.g. useful for internal company APIs).
 
 ## Install
 
