@@ -30,7 +30,7 @@ ES5
 ```js
 var basicAuthToken = require('express-basic-token');
 
-app.use(basicAuthToken({ token: 'very secret' });
+app.use(basicAuthToken({ token: 'very-secret' });
 ```
 
 ES6
@@ -38,25 +38,25 @@ ES6
 ```js
 import basicAuthToken from 'express-basic-token';
 
-app.use(basicAuthToken({ token: 'very secret' });
+app.use(basicAuthToken({ token: 'very-secret' });
 ```
 
 To apply middleware for specific routes
 
 ```js
-app.use('/protected/*', basicAuthToken({ token: 'very secret' });
+app.use('/protected/*', basicAuthToken({ token: 'very-secret' });
 ```
 
 To make exception for protected routes
 
 ```js
-app.use('/protected/*', basicAuthToken({ token: 'very secret' }).unless({ path: ['/protected/not_really'] }));
+app.use('/protected/*', basicAuthToken({ token: 'very-secret' }).unless({ path: ['/protected/not/this/one'] }));
 ```
 
-or
+or another example
 
 ```js
-app.use(basicAuthToken({ token: 'very secret' }).unless({ path: ['/not_protected'] }));
+app.use(basicAuthToken({ token: 'very-secret' }).unless({ path: ['/not-protected/*'] }));
 ```
 
 > Unless allows you to specify array or regex or string or for any other extra options, please see [express-unless](https://github.com/jfromaniello/express-unless).
@@ -65,7 +65,7 @@ You can specify your custom error objects for invalid token authorization
 
 ```js
 app.use(basicAuthToken({
-  token: 'very secret',
+  token: 'very-secret',
   invalidTokenJSON: { message: 'Server Error' },
   notAuthorizedJSON: { message: 'Not Allowed!' }
 });
@@ -75,7 +75,7 @@ To specify custom token header
 
 ```js
 app.use(basicAuthToken({
-  token: 'very secret',
+  token: 'very-secret',
   tokenName: 'MY-TOKEN'
 });
 ```
